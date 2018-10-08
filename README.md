@@ -1,3 +1,3 @@
 # cpp
 
-Create a branch every time you start an exercise. Exercise finishid? close branch.
+Create a branch every time you start an exercise. Exercise finished? close branch.
