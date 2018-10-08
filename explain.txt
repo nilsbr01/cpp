@@ -1,0 +1,5 @@
+1. What differences exist between pointer variables and arrays; 
+2. What differences exist between pointer variables and reference variables; 
+3. How element [3][2] is reached (make a clear drawing) 
+4. What is meant by `pointer arithmetic';
+5. Explain why accessing an element in an array using only a pointer variable is preferred over using an index expression. By implication: why are repetitions iterating over a series of elements using a pointer-type loop control variable preferred over repetitions in which the loop control variable is, e.g., a size_t type variable? 
