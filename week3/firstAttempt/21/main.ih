@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+bool structCall(size_t argc, char **argv);
+bool combine(size_t argc, char **argv);
+bool boundCall(size_t argc, char **argv);
+void usage(std::string const &progname);
+
+using namespace std;
+
+struct ReturnValues
+{
+    bool ok;
+    size_t nr;
+    string value;
+};

@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+
+// enum for color of the eyes of people
+enum color
+{
+    brown,
+    blue
+};
+
+// list item person
+struct Person
+{
+    bool color;     // false = brown, true is blue
+    size_t place;   // place when person had gotten to the line
+};
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+size_t determinePlace(Person *array, size_t index);
+void insert(Person person, Person *array, size_t place, size_t size);
+size_t decideColor();
+void makeList(Person *array, size_t number);
+void printArray(Person *array, size_t size);
+void usage(std::string const &progname);
+
+using namespace std;

@@ -1,0 +1,2 @@
+The value x is an exact power of two
+the value x is not an exact power of two

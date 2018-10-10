@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+int sum(int value1, int value2);
+double sum(double value1, double value2);
+void usage(std::string const &progname);
+
+using namespace std;

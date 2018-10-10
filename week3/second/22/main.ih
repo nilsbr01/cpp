@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+size_t countCharacters();
+size_t countWords();
+size_t countLines();
+
+void usage(std::string const &progname);
+
+using namespace std;
+
