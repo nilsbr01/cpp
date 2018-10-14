@@ -1,7 +1,5 @@
 #include "main.ih"
 
-extern char **environ;
-
 int main(int argc, char **argv)
 {
     // swap pointers
@@ -11,7 +9,7 @@ int main(int argc, char **argv)
 
     size_t index = 0;
     // print all ntbs in argv
-    while(argv[index] != 0)
+    while (argv[index] != 0)
     {
         cout << argv[index] << '\n';
         ++index;
@@ -19,9 +17,6 @@ int main(int argc, char **argv)
     
     index = 0;
     // print all ntbs in environ
-    while(environ[index] != 0)
-    {
+    for (size_t index = 0; index < argc; ++index)
         cout << environ[index] << '\n';
-        ++index;
-    }  
 }

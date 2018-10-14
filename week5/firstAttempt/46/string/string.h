@@ -14,11 +14,15 @@ class String
         String(int argc, char **argv);
         String(char **environ);
         String(std::istream &in);
+        size_t size();
+        std::string *data();
+        std::string &at(size_t index);
+        std::string const &at(size_t index);
 
     private:
         void add(char *str);
         void add(string str);
-        size_t size();
+
 };
         
 #endif
