@@ -2,8 +2,11 @@
 
 String::String(std::istream &in)
 {
-    string line;
+    d_size = 0; // set size of string array to zero
 
+    string line;
+    
+    // add all strings with member add
     while (getline(in, line))
         add(line);
 }

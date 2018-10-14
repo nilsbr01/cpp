@@ -2,8 +2,9 @@
 
 String::String(int argc, char **argv)
 {
-    size_t size = 0;
+    d_size = 0; // set size of string array to zero
 
+    // add all ntbs with member add
     for (size_t index = 0; index < argc; ++index)
         add(argv[index]);
 }
