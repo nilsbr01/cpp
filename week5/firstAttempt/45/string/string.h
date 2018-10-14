@@ -16,7 +16,8 @@ class String
         String(std::istream &in);
 
     private:
-        void add(char *things);
+        void add(char *str);
+        void add(string str);
 };
         
 #endif
