@@ -1,0 +1,61 @@
+In what situation is it appropriate to: 
+
+1. define an int-type parameter?
+It is appropriate to use an int-type parameter when you want to use an existing intiger when the scope of the parameter is restricted to the function. This is because you copy the value of the variable into a temporary value in the function. In this code example this is illustrated because you want to show the multiplication of n by 3 without changing the value of n outside of the function.
+
+2. define a std::string value parameter?
+It is not appropriate to define a string value parameter. If you do not want to modify the string use a constant reference this avoids making a copy which increases the efficiency. If you want to change the value it is better to use a pointer.
+
+3. define a const reference to an int-type parameter?
+This is not appropriate use value parameters instead: value parameters are handled more efficiently.
+
+4. define a const reference to a std::string value parameter?
+It is appropriate to use an const reference to a string parameter when you when you only access the information of the parameter and do not want to modify it. In the example the function checks whether the user input is hello and return 1 if this is true. 
+
+5. define a non-const reference to an int-type parameter?
+It is not appropriate to do this, if you want to change the value of the intiger use a pointer this increases the efficiency.
+
+6. define a non-const reference to a std::string value parameter?
+It is not appropriate to do this, if you want to change the value of the string value use a pointer this increases the efficiency.
+
+7. define a const rvalue-reference to an int-type parameter?
+This is not appropriate. The main reason why a rvalue-reference is used is to move objects instead of copying them. If you want to move them you have to modify them which means that you don't want it to be a const. If you do not want to modify it is better to create a lvalue.
+
+8. define a const rvalue-reference to a std::string parameter?
+This is not appropriate. The main reason why a rvalue-reference is used is to move objects instead of copying thim. If you want to move them you have to modify them which means that you don't want it to be a const. If you do not want to modify it is better to create a lvalue.
+
+9. define an rvalue-reference to an int-type parameter?
+It is appropriate to use an r-value reference to an int-type parameter when the current function uses a temporary bit which otherwise would cease to exist. In this code example this is illustrated because else x would cease to exist.
+
+10. define an rvalue-reference to a std::string parameter?
+It is appropriate to use an r-value reference to an int-type parameter when the current function uses a temporary bit which otherwise would cease to exist. In this code example this is illustrated because else s would cease to exist.
+
+11. return an int-type value?
+It is appropriate to return an int-type value. In the code this is illustrated because you want to create a new variable which is x multiplied by 5.
+
+12. return a std::string value?
+It is appropriate to return a string value. In the code this is illustrated that the return value is created and if you want to store it for later use.
+
+13. return a const reference to an int?
+It is appropriate to return a const reference to an int for example when the argument isnt modified by the function, especially when the argument is a large object. This is seen in the example because you do not want to modify the value of s and it is more efficient to refer to it instead of copying it.
+
+14. return a const reference to a std::string?
+It is appropriate to return a const reference to an int for example when the argument isnt modified by the function, especially when the argument is a large object. This is seen in the example because you do not want to modify the value of x and it is more efficient to refer to it instead of copying it.
+
+15. return a non-const reference to an int?
+It is not appropriate to do this. The situation in which you might be tempted to do this is when you modify a variable which is not just local to the function. If you do so it is better, as explained above, to have a int-type parameter. If you however modify an int-type in the function and return a reference to this than this will not work because the modification is local to the function. 
+
+16. return a non-const reference to a std::string?
+It is not appropriate to do this. If you want to modify a string it is better to return a pointer than to return a non-const reference.
+
+17. return a const rvalue-reference to an int?
+It is not appropriate to return a const-rvalue reference to a int. If you do not want to modify the rvalue it is better to create a lvalue.
+
+18. return a const rvalue-reference to a std::string?
+It is not appropriate to return a const-rvalue reference to a string. If you do not want to modify the rvalue it is better to create a lvalue.
+
+19. return an rvalue-reference to an int?
+It is appropriate to do this if you want to move an int. In the example we modify an rvalue and than return it to extend the life of the rvalue.
+
+20. return an rvalue-reference to a std::string?
+It is appropriate to do this if you want to move an string. In the example we modify an rvalue and than return it to extend the life of the rvalue.
