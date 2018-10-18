@@ -9,6 +9,6 @@ void Strings::add(string const &next)
     d_str = tmp;                        // update d_str and d_size
     }
 
-    *(d_str[d_size]) = next;         // store next
+    d_str[d_size] = new string(next);         // store next
     ++d_size;
 }

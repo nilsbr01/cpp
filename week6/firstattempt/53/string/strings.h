@@ -33,6 +33,9 @@ class Strings
 
         void add(std::string const &next);          // add another element
 
+        void reserve(size_t size);                  // reserve elements
+        void resize(size_t size);                   // resize to size
+
     private:
         void fill(char *ntbs[]);                    // fill prepared d_str
 
