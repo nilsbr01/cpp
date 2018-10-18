@@ -1,20 +1,14 @@
-#include "string.ih"
+#include "strings.ih"
 
-void String::add(string str)
+void Strings::add(string const &next)
 {
-    // make new array
-    string *newStrings = new string[d_size + 1];
+    string *tmp = enlarge();            // make room for the next string,
+                                        // tmp is the new string *
 
-    // copy items
-    for (size_t index = 0; index < d_size; ++index)
-        newStrings[index] = d_str[index];
-    
-    // insert new item
-    newStrings[d_size] = str;
+    tmp[d_size] = next;                 // store next
 
-    //delete old array
-    delete[] d_str;
+    destroy();                          // return old memory
 
-    // set pointer to new array
-    d_str = newStrings;
+    d_str = tmp;                        // update d_str and d_size
+    ++d_size;
 }

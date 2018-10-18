@@ -1,12 +1,9 @@
-#include "string.ih"
+#include "strings.ih"
 
-String::String(char **environ)
+Strings::Strings(char *environLike[])
+:
+    d_size(count(environLike)),
+    d_str(new string[d_size])
 {
-    d_size = 0; // set size of string array to zero
-
-    size_t index = 0;
-
-    // add all ntbs with member add
-    while (environ[index] != 0)
-        add(environ[index]);
+    fill(environLike);
 }
