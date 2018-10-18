@@ -1,12 +1,11 @@
-#include "string.ih"
+#include "strings.ih"
 
-String::String(std::istream &in)
+Strings::Strings(istream &in)
+:
+    d_size(0),
+    d_str(0)
 {
-    d_size = 0; // set size of string array to zero
-
     string line;
-    
-    // add all strings with member add
     while (getline(in, line))
         add(line);
 }

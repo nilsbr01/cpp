@@ -1,10 +1,9 @@
-#include "string.ih"
+#include "strings.ih"
 
-String::String(int argc, char **argv)
+Strings::Strings(int argc, char *argv[])
+:
+    d_size(argc),
+    d_str(new string[argc])
 {
-    d_size = 0; // set size of string array to zero
-
-    // add all ntbs with member add
-    for (size_t index = 0; index < argc; ++index)
-        add(argv[index]);
+    fill(argv);
 }

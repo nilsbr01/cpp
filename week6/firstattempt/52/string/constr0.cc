@@ -1,6 +1,7 @@
-#include "string.ih"
+#include "strings.ih"
 
-String::String()
-{
-    d_size = 0; // set size of strings array
-}
+Strings::Strings()
+:
+    d_size(0),
+    d_str(0)
+{}
