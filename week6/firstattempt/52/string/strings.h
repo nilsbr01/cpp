@@ -19,6 +19,7 @@ class Strings
         Strings(int argc, char *argv[]);
         Strings(char *environLike[]);
         Strings(std::istream &in);
+        ~Strings();
 
         void swap(Strings &other);              
 
@@ -42,8 +43,8 @@ class Strings
 
 };
 
-inline size_t Strings::size() const         // potentially dangerous practice:
-{                                           // inline accessors
+inline size_t Strings::size() const         
+{                                          
     return d_size;
 }
 
