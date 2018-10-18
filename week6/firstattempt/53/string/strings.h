@@ -35,6 +35,7 @@ class Strings
 
         void reserve(size_t size);                  // reserve elements
         void resize(size_t size);                   // resize to size
+        size_t capacity() const;
 
     private:
         void fill(char *ntbs[]);                    // fill prepared d_str
@@ -67,5 +68,9 @@ inline std::string &Strings::at(size_t idx)
     return safeAt(idx);
 }
 
+inline size_t Strings::capacity() const
+{
+    return d_capacity;
+}
         
 #endif
