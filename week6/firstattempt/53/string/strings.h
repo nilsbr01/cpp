@@ -5,6 +5,7 @@
 
 class Strings
 {
+    size_t d_capacity;
     size_t d_size;
     std::string **d_str;
 
@@ -12,7 +13,7 @@ class Strings
         struct POD
         {
             size_t      size;
-            std::string *str;
+            std::string **str;
         };
 
         Strings();
@@ -24,7 +25,7 @@ class Strings
         void swap(Strings &other);              
 
         size_t size() const;
-        std::string const *data() const;
+        std::string const **data() const;
         POD release();
 
         std::string const &at(size_t idx) const;    // for const-objects
@@ -41,14 +42,14 @@ class Strings
 
         static size_t count(char *environLike[]);   // # elements in env.like
 
-};
+}; 
 
 inline size_t Strings::size() const         
 {                                          
     return d_size;
 }
 
-inline std::string const *Strings::data() const
+inline std::string const **Strings::data() const
 {
     return d_str;
 }
