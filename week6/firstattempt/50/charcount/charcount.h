@@ -7,9 +7,15 @@ class CharCount
 {
     enum Action
     {
-        APPEND,
-        INSERT,
-        ADD
+        APPEND = 0,
+        INSERT = 1,
+        ADD = 2
+    };
+
+    void (CharCount::*actions[3])(char, size_t) = {
+        &CharCount::append,
+        &CharCount::insert,
+        &CharCount::add
     };
 
     public:
@@ -40,7 +46,7 @@ class CharCount
         Action locate(size_t *idx, char ch);
         void add(char ch, size_t idx);
         void insert(char ch, size_t idx);
-        void append(char ch);            // in fact:insert at d_nfo.nChar
+        void append(char ch, size_t idx); // in fact:insert at d_info.nChar
 
         void enlarge();
         void transfer(Char *dest, size_t begin, size_t end);
