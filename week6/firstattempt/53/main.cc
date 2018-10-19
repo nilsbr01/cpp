@@ -1,10 +1,18 @@
 #include "main.ih"
+#include "strings/strings.h"
 
-int main(int argc, char **argv)
-try
+extern char **environ;
+    
+int main()
 {
-}
-catch (...)
-{
-    return 1;
+    for (size_t iter = 0; iter != 2; ++iter)
+    {
+        Strings env(environ);
+
+        for (size_t rept = 0; rept != 2; ++rept)
+        {
+            for (char **ptr = environ; *ptr; ++ptr)
+                env.add(*ptr);
+        }
+    }
 }

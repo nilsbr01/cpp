@@ -5,9 +5,9 @@
 
 class Strings
 {
-    size_t d_capacity;
     size_t d_size;
     std::string **d_str;
+    size_t d_capacity;
 
     public:
         struct POD
@@ -25,7 +25,7 @@ class Strings
         void swap(Strings &other);              
 
         size_t size() const;
-        std::string const **data() const;
+        std::string **data() const;
         POD release();
 
         std::string const &at(size_t idx) const;    // for const-objects
@@ -53,7 +53,7 @@ inline size_t Strings::size() const
     return d_size;
 }
 
-inline std::string const **Strings::data() const
+inline std::string **Strings::data() const
 {
     return d_str;
 }
