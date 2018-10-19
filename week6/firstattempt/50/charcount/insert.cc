@@ -2,17 +2,13 @@
 
 void CharCount::insert(char ch, size_t idx)
 {
-    Char *ptr = new Char[d_info.nChar + 1];
+	if (d_info.nChar + 1 == d_capacity)			// make sure there is enough
+		enlarge();								// memory for the new element
 
-    transfer(ptr, 0, idx);          // transfer d_info.ptr[0..idx] to ptr[0]
+	for (size_t i = d_info.nChar; i > idx; --i) // shift elements > idx
+		d_info.ptr[i] = d_info.ptr[i - 1];		// 1 position to the right
 
-    ptr[idx] = Char{ ch, 1 };       // insert the new element
+    d_info.ptr[idx] = Char{ ch, 1 };       		// insert the new element
 
-                                    // transfer the rest
-    transfer(ptr + idx + 1, idx, d_info.nChar);
-
-    delete[] d_info.ptr;            // delete garbage memory
-
-    ++d_info.nChar;                 // added new element
-    d_info.ptr = ptr;               // point at the new Char array
+    ++d_info.nChar;                 			// added new element
 }
