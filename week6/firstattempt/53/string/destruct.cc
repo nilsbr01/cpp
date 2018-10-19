@@ -1,6 +1,6 @@
-#include "string.ih"
+#include "strings.ih"
 
-String::~String()
+Strings::~Strings()
 {
-    delete[] d_str;
+    destroy();
 }
