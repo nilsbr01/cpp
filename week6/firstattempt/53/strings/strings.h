@@ -14,6 +14,7 @@ class Strings
         {
             size_t      size;
             std::string **str;
+            size_t      capacity;
         };
 
         Strings();
@@ -33,15 +34,16 @@ class Strings
 
         void add(std::string const &next);          // add another element
 
-        void reserve(size_t size);                  // reserve elements
+        void reserve(size_t capacity);                  // reserve elements
         void resize(size_t size);                   // resize to size
         size_t capacity() const;
 
     private:
+        Strings(size_t size);
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
-        std::string **enlarge();
+        std::string **enlarge(size_t capacity);
         void destroy();                 
 
         static size_t count(char *environLike[]);   // # elements in env.like

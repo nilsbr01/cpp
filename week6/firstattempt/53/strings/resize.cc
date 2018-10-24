@@ -2,12 +2,22 @@
 
 void Strings::resize(size_t size)
 {
-    // check if size does not exceed capacity
-    size_t upBound = (size < d_capacity ? size : d_capacity);
+    if (size > d_size)
+    {
+        if (size > d_capacity)  // check if we need more capacity
+            reserve(size);
+        
+        // initialize strings
+        for (size_t index = d_size; index < size; ++index)
+            d_str[index] = new string;
 
-    // make all new strings
-    for (size_t index = d_size; index < upBound; ++index)
-        d_str[index] = new string;
+        d_size = size;          // update size
+    }
+    else if (size < d_size) // delete strings
+    {
+        for (size_t index = size; index < d_size; ++index)
+            delete d_str[index];
 
-    d_size = upBound;
+        d_size = size;          // update size
+    }
 }
