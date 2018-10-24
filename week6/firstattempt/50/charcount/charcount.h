@@ -12,12 +12,6 @@ class CharCount
         ADD = 2
     };
 
-    void (CharCount::*actions[3])(char, size_t) = {
-        &CharCount::append,
-        &CharCount::insert,
-        &CharCount::add
-    };
-
     public:
         struct Char
         {
@@ -30,9 +24,9 @@ class CharCount
             Char *ptr;
             size_t nChar;
         };
-    
+
     private:
-        size_t d_capacity = 20;
+        size_t d_capacity = 1; // start with capacity 1, enlarge when needed
         CharInfo d_info = { new Char[d_capacity], 0 };
 
     public:
@@ -50,6 +44,13 @@ class CharCount
 
         void enlarge();
         void transfer(Char *dest, size_t begin, size_t end);
+
+
+    constexpr static void (CharCount::*actions[3])(char, size_t) = {
+        &CharCount::append,
+        &CharCount::insert,
+        &CharCount::add
+    };
 };
 
 inline CharCount::CharInfo const &CharCount::info() const
