@@ -19,7 +19,8 @@ class Strings
         Strings(int argc, char *argv[]);
         Strings(char *environLike[]);
         Strings(std::istream &in);
-
+        ~Strings();
+        
         void swap(Strings &other);              
 
         size_t size() const;

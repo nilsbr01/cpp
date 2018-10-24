@@ -14,7 +14,7 @@ void Strings::reserve(size_t capacity)
         string **ret = new string*[d_capacity];       // room for an extra string *
 
         for (size_t index = 0; index != d_capacity; ++index)// copy existing pointers
-            ret[index] = new string(*d_str[index]);
+            ret[index] = d_str[index];
 
         destroy();                                    // destroy old
 
