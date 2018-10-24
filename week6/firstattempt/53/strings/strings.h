@@ -39,7 +39,6 @@ class Strings
         size_t capacity() const;
 
     private:
-        Strings(size_t size);
         void fill(char *ntbs[]);                    // fill prepared d_str
 
         std::string &safeAt(size_t idx) const;      // private backdoor
