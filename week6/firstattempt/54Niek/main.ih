@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string.h>
+#include <stdio.h>
+
+#include "sort/sort.h"
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+void usage(std::string const &progname);
+
+int nocasedec(std::string const *string1, std::string const *string2);
+int increasing(std::string const **lhs, std::string const **rhs);
+
+using namespace std;
