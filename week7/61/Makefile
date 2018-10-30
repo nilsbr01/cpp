@@ -1,6 +1,6 @@
 CXX=g++
 CXXFLAGS+=-Wall -std=c++17
-SRCS=*.cc
+SRCS=main.cc
 OBJS=$(subst .cc,.o,$(SRCS))
 
 all: main

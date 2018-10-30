@@ -1,7 +1,7 @@
-#include <iosfwd>
-#include <iomanip>
-#include <iostream>
 #include <ctime>
+#include <iomanip>
+#include <iosfwd>
+#include <iostream>
 
 using namespace std;
 
