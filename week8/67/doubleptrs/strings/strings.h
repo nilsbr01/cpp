@@ -14,8 +14,15 @@ class Strings
 
         Strings(int argc, char *argv[]);
         Strings(char **environLike);
+        Strings(Strings const &other);
+        Strings(Strings &&tmp);
 
         ~Strings();
+
+        Strings &operator=(Strings const &rvalue);
+        Strings &operator=(Strings &&tmp);
+        
+        void swap(Strings &other);
 
         size_t size() const;
         size_t capacity() const;
