@@ -3,11 +3,20 @@
 
 extern char **environ;
     
-int main()
+int main(int argc, char *argv[])
 {
-    Strings a(50);
-    Strings b(50);
+    if (argc < 2)
+    {
+        cout << "Wrong use of program\n";
+        return -1;
+    }    
 
-    a.iterate(environ);
-    b.iterate(environ);
+    size_t nIterate = stoul(argv[1]);
+    
+    bool copy = true;
+    if (argc == 3)
+        copy = stoul(argv[2]);
+    
+    Strings strings(nIterate, copy);
+    strings.iterate(environ);
 }

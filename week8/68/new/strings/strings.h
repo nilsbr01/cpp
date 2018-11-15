@@ -8,7 +8,7 @@ class Strings
     size_t d_size;
     std::string *d_str;
     size_t d_nIterate = 0;
-    std::string *(Strings::*ptr)() = &Strings::enlargeByCopy;
+    std::string *(Strings::*ptr)();
 
     public:
         struct POD
