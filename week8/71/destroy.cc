@@ -1,6 +1,6 @@
-#include "data.ih"
+#include "wrapper.ih"
 
-void Data::Union::destroy(Tag tag)
+void Wrapper::Data::destroy(Tag tag)
 {
 	if (tag == Tag::STRINGS)
 		u_words.~Strings();

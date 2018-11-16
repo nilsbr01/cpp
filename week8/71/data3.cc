@@ -1,7 +1,6 @@
-#include "data.ih"
+#include "wrapper.ih"
 
-Data::Data(double value)
+Wrapper::Data::Data(double value)
 :
-    d_tag(DOUBLE),
-    d_union(value)
+	u_value(value)
 {}

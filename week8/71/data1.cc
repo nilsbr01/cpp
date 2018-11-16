@@ -1,7 +1,6 @@
-#include "data.ih"
+#include "wrapper.ih"
 
-Data::Data(Strings const &strs)
+Wrapper::Data::Data(Strings const &strs)
 :
-    d_tag(STRINGS),
-    d_union(strs)
+	u_words(strs)
 {}
