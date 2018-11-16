@@ -2,6 +2,7 @@
 #define DATA_H
 
 #include <string>
+#include "strings/strings.h"
 
 struct Data
 {
@@ -18,6 +19,10 @@ struct Data
 			std::string u_word;
 			double u_value;
 
+			Union(Strings const &strs);
+			Union(std::string const &str);
+			Union(double value);
+
 			~Union();
 			void destroy(Tag tag);
 		};
@@ -26,6 +31,9 @@ struct Data
 		Union d_union;
 
 	public:
+		Data(Strings const &strs);
+		Data(std::string const &str);
+		Data(double value);
 		~Data();
 
 		Strings words() const; // accessors
