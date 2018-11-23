@@ -1,0 +1,8 @@
+#include <iostream>
+#include <string>
+
+extern char **environ;
+
+void usage(std::string const &progname);
+
+using namespace std;

@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string>
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+void partition(std::string *arr, int *index, int *rIndex);
+size_t sizeArray(char **array);
+bool alphOrder(std::string first, std::string second);
+void quickSort (std::string *argv, int left, int right);
+void usage(std::string const &progname);
+
+using namespace std;
