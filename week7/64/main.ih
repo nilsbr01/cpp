@@ -1,7 +1,0 @@
-#include <iostream>
-#include <string>
-#include "lock/lock.h"
-
-void usage(std::string const &progname);
-
-using namespace std;

@@ -1,8 +1,0 @@
-#include "sort.h"
-#include <iostream>
-#include <string>
-
-//#define CERR std::cerr << __FILE__": "
-
-using namespace std;
-

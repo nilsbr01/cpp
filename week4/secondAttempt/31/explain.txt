@@ -1,5 +1,0 @@
-What is and why important?
-Encapsulation is not always data hiding, but data hiding is always a form of encapsulation. Variables make up the data in a class and unction perform tasks using that data. The bundling of these two aspects is called encapsulation. This is important because it makes the class self contained. 
-Data hiding enables (encapsulated) sections of a program to hide its data from other sections. This is important because it allows these sections to enforce the integrity of their data. 
-
-The example shows data hiding because width and heigth are hidden for the user. If they want to change it is only possible by using a member of the class. It is a form of encapsulation because both the functions and the data are in one class. 

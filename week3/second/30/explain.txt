@@ -1,8 +1,0 @@
-In the example the -O2 optimization flag was used. What does it do? What do -O1 and -O3 do?
-Turning on optimization flags makes the compiler attempt to improve the performance and/or code size at the expense of compilation time. The number indicates which indication flags are turned on (the higher the number the more indication flags are turned on).
-This means that -02 turns on all optimation flags of -01 and some extra. And -03 turns on all optimization flags of -02 and some extra.
-
-What are the differences in the profiling results if these optimization flags are used (or if no optimization was used at all?
-If you use a lower level of optimization flags than the compilation speed will increase but the efficiency of the programm will decrease. This means that the time needed for running the programm and profiling will increase. 
-
-We can learn from these results that the efficiency of the program increases when you use references/pointers when we define our own function parameters. We know this because both functions are self called the same number of times and fun2 (which uses a reference) runs faster (the self second are lower) than fun (which copies its parameters). Which means that we should prefer fund2 over fun from an efficiency perspective.

@@ -1,4 +1,0 @@
-alphOrder.cc
-quicksort.cc
-main.ih
-main.cc
