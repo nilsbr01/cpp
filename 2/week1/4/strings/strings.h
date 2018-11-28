@@ -4,7 +4,10 @@
 #include <iostream>
 
 class Strings
-{
+{        
+    friend std::ostream &operator<<(std::ostream &out, Strings const &strings);
+    friend std::istream &operator>>(std::istream &in, Strings &strings);
+
     size_t d_size = 0;
     size_t d_capacity = 1;
     std::string **d_str;            // now a double *
@@ -28,9 +31,7 @@ class Strings
         void reserve(size_t newCapacity);
 
         void swap(Strings &other);
-        std::istream &operator>>(std::istream &in);
-        std::ostream &operator<<(std::ostream &out);
-        
+
     private:
         std::string &safeAt(size_t idx) const;      // private backdoor
         std::string **storageArea();                // to store the next str.
@@ -38,7 +39,7 @@ class Strings
         std::string **enlarged();                   // to d_capacity
         static std::string **rawPointers(size_t nPointers);
         std::istream &extractFrom(std::istream &in);
-        std::ostream &insertInto(std::ostream &out);
+        std::ostream &insertInto(std::ostream &out) const;
 };
 
 inline size_t Strings::size() const         // potentially dangerous practice:
@@ -61,14 +62,14 @@ inline std::string &Strings::at(size_t idx)
     return safeAt(idx);
 }
 
-inline std::istream &Strings::operator>>(std::istream &in)
+inline std::istream &operator>>(std::istream &in, Strings &strings)
 {
-    return extractFrom(in);
+    return strings.extractFrom(in);
 }
 
-inline std::ostream &Strings::operator<<(std::ostream &out)
+inline std::ostream &operator<<(std::ostream &out, Strings const &strings)
 {
-    return insertInto(out);
+    return strings.insertInto(out);
 }
         
 #endif
