@@ -4,10 +4,10 @@
 class ShowExcepts
 {
 	private:
+        int d_value;
 		void (*d_fun)();
-		int d_value;
 	public:
-		ShowExcepts(int value, void (ShowExcepts::*fun)());
+		ShowExcepts(int value, void (*fun)());
 		void asAthrowList();
 		void asNoexcept() throw ();
 };

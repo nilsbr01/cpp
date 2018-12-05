@@ -2,5 +2,5 @@
 
 void ShowExcepts::asNoexcept() throw ()
 {
-	this->*d_fun();
+	d_fun();
 }
