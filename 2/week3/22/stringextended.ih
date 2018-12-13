@@ -1,0 +1,4 @@
+#include "stringextended.h"
+#include <iostream>
+
+using namespace std;
