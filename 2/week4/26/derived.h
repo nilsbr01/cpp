@@ -1,0 +1,4 @@
+class Derived: public Base
+{
+
+};
