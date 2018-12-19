@@ -1,0 +1,7 @@
+g++ -Wall -std=c++17 *.cc -o main
+multi1.cc: In constructor ‘Multi::Multi()’:
+multi1.cc:5:38: error: ‘Basic’ is an ambiguous base of ‘Multi’
+     cout << static_cast<Basic *>(this) << '\n';
+                                      ^
+Makefile:9: recipe for target 'main' failed
+make: *** [main] Error 1
