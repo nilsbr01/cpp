@@ -1,0 +1,14 @@
+#include <iostream>
+#include <string>
+#include "demo/demo.h"
+
+namespace Icmbuild
+{
+    extern char version[];
+    extern char years[];
+    extern char author[];
+};
+
+Demo factory();
+
+using namespace std;
