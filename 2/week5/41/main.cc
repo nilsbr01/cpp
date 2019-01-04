@@ -5,7 +5,7 @@
     
 using namespace std;
 
-int main(int argc, char **argv)
+int main()
 {
     unordered_multimap<string, string> map = {
         {"1","1"},
@@ -15,18 +15,18 @@ int main(int argc, char **argv)
     };
     
     size_t nElements = map.size();    // total number of elements
-    size_t nDuplicats = 0;              // initialize number of duplicates
+    size_t nDuplicates = 0;           // initialize number of duplicates
     
     for (auto iter = map.begin(); iter != map.end(); ++iter)
     {
         // counts occurence of key
-        size_t keyDuplicats = map.count(iter -> first);
+        size_t keyDuplicates = map.count(iter->first);
         // add duplicats minus one (since this is unique)
-        nDuplicats += keyDuplicats - 1;
+        nDuplicates += keyDuplicates - 1;
         // move to next item
-        advance(iter,keyDuplicats - 1);
+        advance(iter, keyDuplicates - 1);
     }    
     
-    size_t nUniqueKeys = nElements - nDuplicats;
+    size_t nUniqueKeys = nElements - nDuplicates;
     cout << "There are " << nUniqueKeys << " in the container\n";
 }
