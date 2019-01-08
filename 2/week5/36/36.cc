@@ -1,19 +1,17 @@
 #include <iostream>
 #include <string>
-#include <queue>
+#include <set>
+
 using namespace std;
 
 int main()
 {
-    priority_queue<string> q;
+    set<string> s;
     string word;
 
     while (cin >> word)
-        q.push(word);
+        s.insert(word);
 
-    while (q.size())
-    {
-        cout << q.top() << '\n';
-        q.pop();
-    }
+    for (auto iter = s.begin(); iter != s.end(); ++iter)
+    	cout << *iter << '\n';
 }
