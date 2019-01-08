@@ -6,12 +6,10 @@
 
 class Signal
 {
+    class Handler;
+    std::vector<std::vector<Handler *>> d_handlers;
+    
     public:
-        class Handler;
-
-        Signal();
-        ~Signal();
-
         void add(size_t signum, Handler &object);
         void remove(size_t signum, Handler &object);
         void ignore(size_t signum);
@@ -19,11 +17,18 @@ class Signal
 
     
     private:
-        std::vector<std::vector<Handler *>> d_handlers;
         void signal(int signum, sighandler_t handler);
 
 };
 
+class Signal::Handler
+{
+    friend class Signal;
 
+    public:
+        virtual ~Handler();
+    private:
+        virtual void handle(size_t signum) = 0;
+};
 
 #endif
