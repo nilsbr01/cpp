@@ -9,7 +9,7 @@ int main()
     string word;
 
     while (cin >> word)
-    	words[word] = words.count(word) > 0 ? ++words[word] : 1;
+    	++words[word];
 
     for (const auto &entry : words)
     	cout << entry.first << ' ' << entry.second << '\n';
