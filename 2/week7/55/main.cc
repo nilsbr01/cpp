@@ -18,7 +18,7 @@ void eratosthenes(size_t numPrimes)
             if (next % prime == 0)
             {
                 isPrime = false;
-                continue;
+                break;
             }
 
         if (isPrime)
